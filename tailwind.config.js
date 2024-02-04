@@ -10,6 +10,12 @@ export default {
   ],
   theme: {
     extend: {},
+    extend: {
+      fontFamily: {
+        dotgothic: ["DotGothic16", "sans-serif"],
+      },
+    },
   },
+  variants: {},
   plugins: [],
 };
