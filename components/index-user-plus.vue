@@ -25,7 +25,7 @@
       v-if="isModalOpen"
       class="fixed inset-0 flex items-center justify-center z-50"
     >
-      <div class="bg-white p-10">
+      <div class="bg-white p-10 overflow-auto h-3/4">
         <h2 class="text-2xl mb-4">登録</h2>
         <form @submit.prevent="submitForm">
           <div class="mb-4">
@@ -121,6 +121,11 @@ export default {
       form: {
         name: "",
         image: null,
+        group: "",
+        x: "",
+        instagram: "",
+        tiktok: "",
+        showroom: "",
       },
     };
   },
@@ -133,7 +138,13 @@ export default {
     },
     submitForm() {
       this.$emit("submit", this.form);
-      this.form = { name: "", image: null }; // フォームをリセット
+      console.log(this.form);
+      this.form = { name: "", image: null };
+      this.form = { group: "" };
+      this.form = { x: "" };
+      this.form = { instagram: "" };
+      this.form = { tiktok: "" };
+      this.form = { showroom: "" };
       this.closeModal();
     },
     onFileChange(e) {
