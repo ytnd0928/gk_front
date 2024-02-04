@@ -114,7 +114,9 @@ export default {
   methods: {
     // Other methods...
     addItem(item) {
-      this.items.push(item);
+      if (item && item.name && item.image) {
+        this.items.push(item);
+      }
     },
   },
 };

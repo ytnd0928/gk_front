@@ -6,7 +6,7 @@
   <div class="h-screen">
     <!-- バナー -->
     <div class="h-96 bg-gray-200 flex justify-center items-center overflow-hidden cursor-[url('/assets/css/images/cursor.png'), auto] shadow-md">
-      <img class="w-[1512px] h-[500px] object-cover object-center" src="/assets/css/images/hkb.jpg" alt="Image 1">
+      <img class="w-[1512px] h-[500px] object-cover object-center" src="/assets/css/images/fes.jpeg" alt="Image 1">
     </div>
     <!-- 検索バー -->
     <div class="flex justify-center items-center h-20 space-x-4">

@@ -1,7 +1,7 @@
 <!-- components/Header.vue -->
 <template>
   <div
-    class="h-20 bg-lime-400 font-dotgothic font-bold text-black flex items-center pl-3 shadow-xl"
+    class="h-20 font-dotgothic font-bold text-black flex items-center pl-3 shadow-xl"
   >
     <div>
       <h1 class="text-lg px-8 py-4 w-12/12 overflow-hidden whitespace-nowrap">

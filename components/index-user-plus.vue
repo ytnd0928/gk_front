@@ -88,8 +88,8 @@ export default {
       this.isModalOpen = false;
     },
     submitForm() {
-      // Submit the form data
-      console.log(this.form);
+      this.$emit("submit", this.form);
+      this.form = { name: "", image: null }; // フォームをリセット
       this.closeModal();
     },
     onFileChange(e) {
