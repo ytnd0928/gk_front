@@ -25,11 +25,11 @@
       v-if="isModalOpen"
       class="fixed inset-0 flex items-center justify-center z-50"
     >
-      <div class="bg-white p-8">
-        <h2 class="text-2xl mb-4">Modal Title</h2>
+      <div class="bg-white p-10">
+        <h2 class="text-2xl mb-4">登録</h2>
         <form @submit.prevent="submitForm">
           <div class="mb-4">
-            <label for="name" class="block mb-2">Name</label>
+            <label for="name" class="block mb-2">おなまえ</label>
             <input
               v-model="form.name"
               id="name"
@@ -38,9 +38,53 @@
               required
             />
           </div>
-
+          <div class="mb-2">
+            <label for="name" class="block">グループ名</label>
+            <input
+              v-model="form.group"
+              id="group"
+              class="border-2 border-gray-300 mb-2 w-full"
+              type="text"
+            />
+          </div>
           <div class="mb-4">
-            <label for="image" class="block mb-2">Icon Image</label>
+            <label for="name" class="block mb-2">X</label>
+            <input
+              v-model="form.x"
+              id="name"
+              class="border-2 border-gray-300 p-2 w-full"
+              type="text"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="instagram" class="block mb-2">Instagram</label>
+            <input
+              v-model="form.instagram"
+              id="name"
+              class="border-2 border-gray-300 p-2 w-full"
+              type="text"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="tiktok" class="block mb-2">TikTok</label>
+            <input
+              v-model="form.tiktok"
+              id="name"
+              class="border-2 border-gray-300 p-2 w-full"
+              type="text"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="showroom" class="block mb-2">SHOWROOM</label>
+            <input
+              v-model="form.showroom"
+              id="name"
+              class="border-2 border-gray-300 p-2 w-full"
+              type="text"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="image" class="block mb-2">しゃしん</label>
             <input
               @change="onFileChange"
               id="image"
@@ -52,16 +96,16 @@
 
           <button
             type="submit"
-            class="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+            class="mt-4 px-4 py-2 bg-pink-500 text-white rounded"
           >
-            Submit
+            とうろく
           </button>
         </form>
         <button
           @click="closeModal"
-          class="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+          class="mt-4 px-4 py-2 bg-pink-500 text-white rounded"
         >
-          Close
+          とじる
         </button>
       </div>
     </div>
