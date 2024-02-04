@@ -25,7 +25,7 @@
       v-if="isModalOpen"
       class="fixed inset-0 flex items-center justify-center z-50"
     >
-      <div class="bg-white p-10 overflow-auto h-3/4">
+      <div class="bg-white p-10 overflow-auto h-3/4 rounded-xl">
         <h2 class="text-2xl mb-4">登録</h2>
         <form @submit.prevent="submitForm">
           <div class="mb-4">
