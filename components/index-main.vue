@@ -7,11 +7,13 @@ import type { IndexUserPlus } from '#build/components';
       :key="index"
       class="flex flex-col items-center"
     >
-      <img
-        class="rounded-full w-44 h-44 hover:ring-4 hover:ring-orange-500 hover:scale-110 transition-transform object-cover shadow-md"
-        :src="item.image"
-        alt="Image"
-      />
+      <nuxt-link :to="item.id ? `/user/chekis/${item.id}` : '#'">
+        <img
+          class="rounded-full w-44 h-44 hover:ring-4 hover:ring-orange-500 hover:scale-110 transition-transform object-cover shadow-md"
+          :src="item.image"
+          alt="Image"
+        />
+      </nuxt-link>
       <p class="text-center mt-2">{{ item.name }}</p>
     </div>
   </div>
@@ -35,6 +37,13 @@ export default {
     // Other methods...
     addItem(item) {
       if (item && item.name && item.image) {
+        // Generate a unique ID for the new item
+        const id = this.items.length + 1;
+
+        // Add the ID to the new item
+        item.id = id;
+
+        // Add the new item to the items array
         this.items.push(item);
       }
     },

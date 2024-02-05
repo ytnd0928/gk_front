@@ -146,6 +146,7 @@ export default {
       this.form = { tiktok: "" };
       this.form = { showroom: "" };
       this.closeModal();
+      console.log(this.form);
     },
     onFileChange(e) {
       const file = e.target.files[0];
