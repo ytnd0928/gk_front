@@ -9,10 +9,12 @@ export default {
     "./app.vue",
   ],
   theme: {
-    extend: {},
     extend: {
       fontFamily: {
         dotgothic: ["DotGothic16", "sans-serif"],
+      },
+      boxShadow: {
+        "custom-color": "0 10px 20px rgba(255, 0, 0, 0.25)",
       },
     },
   },

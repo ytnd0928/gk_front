@@ -11,10 +11,10 @@
     <div class="w-11/12 px-8 py-4">
       <ul class="flex justify-end space-x-4 transform">
         <li class="hover:scale-110 transition-transform hover:text-pink-500">
-          チェキ一覧
+          ひかきん1
         </li>
         <li class="hover:scale-110 transition-transform hover:text-pink-500">
-          トークルーム
+          ひかきん２
         </li>
         <li class="hover:scale-110 transition-transform hover:text-pink-500">
           page3
