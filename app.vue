@@ -9,7 +9,7 @@
     >
       <img
         class="w-[1512px] h-[500px] object-cover object-center"
-        src="/assets/css/images/hkb.jpg"
+        src="/assets/css/images/testttt.png"
         alt="Image 1"
       />
     </div>

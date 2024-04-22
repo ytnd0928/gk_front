@@ -1,11 +1,11 @@
-import type { IndexUserPlus } from '#build/components';
-<!-- メインコンテンツ -->
 <template>
   <div class="grid grid-cols-5 gap-8 px-32 py-12 font-dotgothic font-bold">
+    <p class="stay">{{ displayedItemsCount }}</p>
     <div
       v-for="(item, index) in items"
       :key="index"
       class="flex flex-col items-center"
+      ref="observeItems"
     >
       <nuxt-link :to="item.id ? `/user/chekis/${item.id}` : '#'">
         <img
@@ -19,6 +19,20 @@ import type { IndexUserPlus } from '#build/components';
   </div>
   <IndexUserPlus @submit="addItem" />
 </template>
+
+<style>
+.stay {
+  grid-column: 1 / span 5;
+  text-align: center;
+  font-size: 5rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  /* right: 50%; */
+  color: red;
+}
+</style>
+
 <script>
 export default {
   name: "IndexMain",
@@ -29,24 +43,45 @@ export default {
         name: "",
         image: null,
       },
-      items: [], // 新しい配列
+      items: JSON.parse(localStorage.getItem("items")) || [],
+      displayedItemsCount: 0,
     };
   },
-  // methods, computed properties, etc...
   methods: {
-    // Other methods...
     addItem(item) {
       if (item && item.name && item.image) {
-        // Generate a unique ID for the new item
         const id = this.items.length + 1;
 
-        // Add the ID to the new item
         item.id = id;
 
-        // Add the new item to the items array
         this.items.push(item);
+        localStorage.setItem("items", JSON.stringify(this.items));
       }
     },
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              this.displayedItemsCount++;
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 1.0,
+        }
+      );
+
+      if (this.$refs.observeItems) {
+        this.$refs.observeItems.forEach((item) => {
+          observer.observe(item);
+        });
+      }
+    });
   },
 };
 </script>
