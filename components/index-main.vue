@@ -16,6 +16,7 @@
       </nuxt-link>
       <p class="text-center mt-2">{{ item.name }}</p>
     </div>
+    <button @click="deleteAllItems">Delete All Items</button>
   </div>
   <IndexUserPlus @submit="addItem" />
 </template>
@@ -57,6 +58,10 @@ export default {
         this.items.push(item);
         localStorage.setItem("items", JSON.stringify(this.items));
       }
+    },
+    deleteAllItems() {
+      this.items = [];
+      localStorage.setItem("items", JSON.stringify(this.items));
     },
   },
 
