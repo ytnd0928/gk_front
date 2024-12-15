@@ -9,14 +9,13 @@
     >
       <nuxt-link :to="item.id ? `/user/chekis/${item.id}` : '#'">
         <img
-          class="rounded-full w-44 h-44 hover:ring-4 hover:ring-orange-500 hover:scale-110 transition-transform object-cover shadow-md"
+          class="rounded-full w-24 h-24 hover:ring-4 hover:ring-pink-500 hover:scale-110 transition-transform object-cover shadow-md"
           :src="item.image"
           alt="Image"
         />
       </nuxt-link>
       <p class="text-center mt-2">{{ item.name }}</p>
     </div>
-    <button @click="deleteAllItems">Delete All Items</button>
   </div>
   <IndexUserPlus @submit="addItem" />
 </template>
@@ -58,10 +57,6 @@ export default {
         this.items.push(item);
         localStorage.setItem("items", JSON.stringify(this.items));
       }
-    },
-    deleteAllItems() {
-      this.items = [];
-      localStorage.setItem("items", JSON.stringify(this.items));
     },
   },
 
