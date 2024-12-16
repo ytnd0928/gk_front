@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-5 gap-8 px-32 py-12 font-dotgothic font-bold">
+  <div class="grid grid-cols-5 py-12 font-dotgothic font-bold">
     <p class="stay">{{ displayedItemsCount }}</p>
     <div
       v-for="(item, index) in items"
